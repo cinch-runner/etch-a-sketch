@@ -5,7 +5,7 @@ let gridContainer = document.querySelector("#grid");
 
 document.body.onload = gridMaker;
 
-// Returns a row of 16 blocks
+// Creates the grid with 16 rows
 function gridMaker() {
   for (let x = 0; x < 16; x++) {
     let row = document.createElement("div");
@@ -14,11 +14,14 @@ function gridMaker() {
     for (let i = 0; i < 16; i++) {
       let block = document.createElement("div");
       block.classList.add("block");
-      block.textContent = "b";
       row.appendChild(block);
     }
     gridContainer.appendChild(row);
   }
 }
 
-// Creates the grid with 16 rows
+let blockElement = document.querySelector(".block");
+
+blockElement.addEventListener("click", () => {
+  blockElement.style.background = "black";
+});
