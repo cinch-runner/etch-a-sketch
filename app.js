@@ -37,10 +37,14 @@ function gridMaker(gridSize) {
       block.classList.add("block");
       block.style.width = `${blockSize}px`;
       block.style.height = `${blockSize}px`;
-      block.addEventListener("mouseenter", function () {
-        block.style.backgroundColor = "white";
-        block.style.border = "none";
-      });
+
+      // Listen for mouse event
+      block.addEventListener("mouseenter", changeBlock);
+
+      // Listen for touch events
+      block.addEventListener("touchstart", changeBlock, { passive: false });
+      block.addEventListener("touchmove", handleTouch, { passive: false });
+
       row.appendChild(block);
     }
     gridContainer.appendChild(row);
