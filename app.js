@@ -16,7 +16,7 @@ function gridMaker() {
       block.classList.add("block");
       // add event listener here
       block.addEventListener("click", function () {
-        block.style.backgroundColor = "black";
+        block.style.backgroundColor = "white";
         block.style.border = "none";
       });
       row.appendChild(block);
