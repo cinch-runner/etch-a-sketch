@@ -60,7 +60,7 @@ function handleTouch(event) {
     let touch = event.touches[i];
     let touchedElement = document.elementFromPoint(
       touch.clientX,
-      touch.ClientY
+      touch.clientY
     );
 
     if (touchedElement && touchedElement.classList.contains("block")) {
