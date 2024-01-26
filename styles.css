@@ -26,14 +26,11 @@ h1 {
 .row {
   display: flex;
   width: 100%;
-  height: calc(440px / 16);
 }
 
 .block {
   opacity: 1;
   border: 1px solid rgb(149, 142, 142);
-  width: calc(100% / 16);
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

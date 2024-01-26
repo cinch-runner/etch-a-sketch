@@ -9,22 +9,27 @@ gridSizeSlider.addEventListener("input", () => {
   gridMaker(gridSizeSlider.value);
 });
 
-// Creates the grid with 16 rows
+// Creates the grid with default 16 rows
 function gridMaker(gridSize) {
   // clear existing grid
   while (gridContainer.firstChild) {
     gridContainer.removeChild(gridContainer.firstChild);
   }
 
-  // create new grid based on slider value
+  // Calculate block size
+  let blockSize = 440 / gridSize;
+
+  // create new grid based on gridSize
   for (let x = 0; x < gridSize; x++) {
     let row = document.createElement("div");
     row.classList.add("row");
+    row.style.height = `${blockSize}px`;
 
     for (let i = 0; i < gridSize; i++) {
       let block = document.createElement("div");
       block.classList.add("block");
-      // add event listener here
+      block.style.width = `${blockSize}px`;
+      block.style.height = `${blockSize}px`;
       block.addEventListener("click", function () {
         block.style.backgroundColor = "white";
         block.style.border = "none";
