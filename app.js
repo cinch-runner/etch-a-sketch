@@ -30,7 +30,7 @@ function gridMaker(gridSize) {
       block.classList.add("block");
       block.style.width = `${blockSize}px`;
       block.style.height = `${blockSize}px`;
-      block.addEventListener("mouseenter", function () {
+      block.addEventListener("mouseenter", () => {
         block.style.backgroundColor = "white";
         block.style.border = "none";
       });
