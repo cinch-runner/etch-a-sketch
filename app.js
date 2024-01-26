@@ -24,3 +24,15 @@ function gridMaker() {
     gridContainer.appendChild(row);
   }
 }
+
+// reset button -> resets grid
+
+const resetButton = document.querySelector("#reset");
+
+resetButton.addEventListener("click", () => {
+  while (gridContainer.firstChild) {
+    gridContainer.removeChild(gridContainer.firstChild);
+  }
+
+  gridMaker();
+});
