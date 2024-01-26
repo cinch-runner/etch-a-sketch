@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background: darkgrey;
+}
+
 h1 {
   text-align: center;
 }
@@ -22,8 +26,8 @@ h1 {
 }
 
 .block {
-  background: white;
-  border: 2px solid red;
+  opacity: 1;
+  border: 2px solid darkblue;
   width: calc(100% / 16);
   height: 100%;
   display: flex;

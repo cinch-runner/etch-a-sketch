@@ -14,14 +14,13 @@ function gridMaker() {
     for (let i = 0; i < 16; i++) {
       let block = document.createElement("div");
       block.classList.add("block");
+      // add event listener here
+      block.addEventListener("click", function () {
+        block.style.backgroundColor = "black";
+        block.style.border = "none";
+      });
       row.appendChild(block);
     }
     gridContainer.appendChild(row);
   }
 }
-
-let blockElement = document.querySelector(".block");
-
-blockElement.addEventListener("click", () => {
-  blockElement.style.background = "black";
-});
