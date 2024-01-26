@@ -1,3 +1,10 @@
+// Disable scroll for mobile
+function disableMobileScroll() {
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    document.body.classList.add("no-scroll");
+  }
+}
+
 // DOM Mapping
 let gridContainer = document.querySelector("#grid");
 let gridSizeSlider = document.querySelector("#grid-size-slider");
@@ -30,13 +37,31 @@ function gridMaker(gridSize) {
       block.classList.add("block");
       block.style.width = `${blockSize}px`;
       block.style.height = `${blockSize}px`;
-      block.addEventListener("mouseenter", function () {
-        block.style.backgroundColor = "white";
-        block.style.border = "none";
-      });
+
+      // Listening for mouse enter
+      block.addEventListener("mouseenter", changeBlock);
+
+      // Listening for touch events
       row.appendChild(block);
     }
     gridContainer.appendChild(row);
+  }
+}
+
+function changeBlock(event) {
+  event.target.style.backgroundColor = "white";
+  event.target.style.border = "none";
+}
+
+function handleTouch(event) {
+  event.preventDefault();
+  let touch = event.touches[0];
+
+  let touchedElement = document.elementFromPoint(touch.clientX, touch.ClientY);
+
+  if (touchedElement && touchedElement.classList.contains("block")) {
+    touchedElement.style.backgroundColor = "white";
+    touchedElement.style.border = "none";
   }
 }
 

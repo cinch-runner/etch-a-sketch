@@ -71,3 +71,9 @@ h1 {
   text-align: center;
   margin-top: 0;
 }
+
+.no-scroll {
+  overflow: hideen;
+  height: 100%;
+  width: 100%;
+}
