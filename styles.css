@@ -14,9 +14,11 @@ h1 {
 }
 
 #grid {
-  height: 440px;
-  width: 440px;
-  margin: 30px auto 50px auto;
+  max-height: 80vh;
+  max-width: 80vw;
+  height: 80vmin;
+  width: 80vmin;
+  margin: 5vh auto;
   display: flex;
   flex-wrap: wrap;
   box-shadow: 0px 0px 20px rgb(103, 103, 103);
@@ -31,9 +33,6 @@ h1 {
 .block {
   opacity: 1;
   border: 1px solid rgb(149, 142, 142);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #reset {
@@ -73,7 +72,7 @@ h1 {
 }
 
 .no-scroll {
-  overflow: hideen;
+  overflow: hidden;
   height: 100%;
   width: 100%;
 }

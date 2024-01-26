@@ -9,9 +9,6 @@ function disableMobileScroll() {
 let gridContainer = document.querySelector("#grid");
 let gridSizeSlider = document.querySelector("#grid-size-slider");
 
-// load grid on page load
-document.body.onload = gridMaker(16);
-
 gridSizeSlider.addEventListener("input", () => {
   gridMaker(gridSizeSlider.value);
 });
@@ -24,13 +21,13 @@ function gridMaker(gridSize) {
   }
 
   // Calculate block size
-  let blockSize = 440 / gridSize;
+  let gridWidth = gridContainer.clientWidth;
+  let blockSize = gridWidth / gridSize;
 
   // create new grid based on gridSize
   for (let x = 0; x < gridSize; x++) {
     let row = document.createElement("div");
     row.classList.add("row");
-    row.style.height = `${blockSize}px`;
 
     for (let i = 0; i < gridSize; i++) {
       let block = document.createElement("div");
@@ -76,4 +73,14 @@ resetButton.addEventListener("click", () => {
   }
 
   gridMaker(16);
+});
+
+window.addEventListener("resize", () => {
+  gridMaker(gridSizeSlider.value);
+});
+
+// load grid on page load
+document.body.onload = gridMaker(16);
+gridSizeSlider.addEventListener("input", () => {
+  gridMaker(gridSizeSlider.value);
 });
