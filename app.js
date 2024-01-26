@@ -56,12 +56,17 @@ function changeBlock(event) {
 function handleTouch(event) {
   event.preventDefault();
   let touch = event.touches[0];
+  for (let i = 0; i < event.touches.length; i++) {
+    let touch = event.touches[i];
+    let touchedElement = document.elementFromPoint(
+      touch.clientX,
+      touch.ClientY
+    );
 
-  let touchedElement = document.elementFromPoint(touch.clientX, touch.ClientY);
-
-  if (touchedElement && touchedElement.classList.contains("block")) {
-    touchedElement.style.backgroundColor = "white";
-    touchedElement.style.border = "none";
+    if (touchedElement && touchedElement.classList.contains("block")) {
+      touchedElement.style.backgroundColor = "white";
+      touchedElement.style.border = "none";
+    }
   }
 }
 
