@@ -44,3 +44,33 @@ h1 {
   display: block;
   margin: 0 auto;
 }
+
+#grid-size-container {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  margin: 5px auto;
+}
+
+#grid-size-container h3 {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#grid-size-container label {
+  color: white;
+  text-align: center;
+}
+
+#grid-size-adjuster {
+  width: 200px;
+  align-self: center;
+}
+
+#rangeValue {
+  color: white;
+  text-align: center;
+  margin-top: 0;
+}

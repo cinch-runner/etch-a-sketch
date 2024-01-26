@@ -9,6 +9,22 @@
   </head>
   <body>
     <h1>Etch - a - Sketch</h1>
+    <div id="grid-size-container">
+      <h3>Grid Size</h3>
+      <label for="grid-size">Choose between 8 and 32</label>
+      <input
+        id="grid-size-adjuster"
+        autocomplete="off"
+        name="grid-size"
+        value="16"
+        type="range"
+        min="8"
+        max="32"
+        step="2"
+        oninput="rangeValue.innerText = this.value"
+      />
+      <p id="rangeValue">16</p>
+    </div>
     <div id="grid"></div>
     <button id="reset">RESET</button>
   </body>

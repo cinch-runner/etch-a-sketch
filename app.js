@@ -5,6 +5,7 @@ let gridContainer = document.querySelector("#grid");
 
 document.body.onload = gridMaker;
 
+
 // Creates the grid with 16 rows
 function gridMaker() {
   for (let x = 0; x < 16; x++) {
@@ -36,3 +37,8 @@ resetButton.addEventListener("click", () => {
 
   gridMaker();
 });
+
+// resets grid size to match #grid-size-adjuster
+// on page load, default is 16
+// when slider is moved
+// adjuster grid size to value of slider
